@@ -1,8 +1,6 @@
 import React from "react";
-import "./styles/styles.scss";
-import Curso from "./curso";
 
-const App = () => (
+const Curso = () => (
   <>
     <article className="card">
       <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
@@ -35,19 +33,7 @@ const App = () => (
         </div>
       </div>
     </article>
-
-    <article className="card">
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-    </article>
   </>
 );
 
-export default App;
+export default Curso;
