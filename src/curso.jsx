@@ -1,43 +1,38 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const mayorDeEdad = (edad) => edad > 18;
-
-const persona = { nombre: "Alberto", apellido: "Quiroga", edad: 10 };
-
-const Curso = () => (
+const Curso = ({ title, image, price, profesor }) => (
   <>
     <article className="card">
       <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-        <img
-          src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          alt=""
-        />
+        <img src={image} alt={title} />
       </div>
       <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-        <h3 className="t5 s-mb-2 s-center">
-          {mayorDeEdad(persona.edad) ? <h3>Soy mayor</h3> : <p>Soy menor</p>}
-        </h3>
-        <div className="s-mb-2 s-main-center">
-          <div className="card__teacher s-cross-center">
-            <div className="card__avatar s-mr-1">
-              <div className="circle img-container">
-                <img
-                  src="https://tecnovortex.com/wp-content/uploads/2019/04/wallpaper-engine.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <span className="small">{`${persona.nombre} ${persona.apellido}`}</span>
-          </div>
-        </div>
+        <h3 className="center">{title}</h3>
+        <div className="s-main-center">{`Prof.: ${profesor}`}</div>
         <div className="s-main-center">
           <a className="button--ghost-alert button--tiny" href="#">
-            $ 20USD
+            {`${price}`}
           </a>
         </div>
       </div>
     </article>
   </>
 );
+
+Curso.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  profesor: PropTypes.string,
+};
+
+Curso.defaultProps = {
+  title: "No se encontro titulo",
+  image:
+    "https://blog.desdelinux.net/wp-content/uploads/2020/03/Next.js-9.3.gif",
+  price: "--",
+  profesor: "",
+};
 
 export default Curso;
