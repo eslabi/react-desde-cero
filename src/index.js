@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 import App from "./App";
-//import App from './App';
+import * as serviceWorker from "./serviceWorker";
 
 const root = document.getElementById("root");
 
 //Es jsx, no es javaScript puro
-ReactDOM.render(<App />, root);
+ReactDOM.render(<App />, document.getElementById("root"));
+
+serviceWorker.unregister();
